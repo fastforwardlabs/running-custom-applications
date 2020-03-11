@@ -32,10 +32,10 @@ Launch New Python Session:
 
 ![Start Session][StartingSession]
 
-Run:
+First we need to make sure that all the required libraries are installed. From the CML/CDSW IDE run:
 
 ```bash
-!pip3 install hiplot tensorboard
+!pip3 install -r requirements.txt
 ```
 
 ![Install Packages][InstallPackages]
@@ -78,10 +78,11 @@ I save this out as `run-tensorboard.py`
 
 Notice that adding a flag is as simple as adding the flag and its setting sd part of the comma separated list within the `subprocess.call([ ... ])` command
 
-First we need to make sure that all the required libraries are installed. From the CML/CDSW IDE run:
+For this demonstration, I will generate some data to populate tensorboard first.
 
-`!pip3 install  -r requirements.txt`
+Run `test_runs_tensorflow.py` in the CDSW/CML Session by opening the py file then hitting the play arrow.
 
+![GenreateData][PopulateWithData]
 
 
 # Running applications that require flags
@@ -126,3 +127,4 @@ Through the use of the python `subprocess` module it is possible to execute arbi
 [ApplicationsForm]: screenshots/ApplicationForm.png
 [ApplicationCreated]: screenshots/ApplicationCreated.png
 [ApplicationRun]: screenshots/ApplicationScreen.png
+[PopulateWithData]: screenshots/PopulateWithData.png
