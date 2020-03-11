@@ -21,6 +21,8 @@ Click Create Project:
 
 ![Create Project][CreateProject]
 
+Clone from: https://github.com/fastforwardlabs/running-custom-applications
+
 Click Open Workbench:
 
 ![Open Workbench][OpenWorkbench]
@@ -40,7 +42,9 @@ Run:
 
 Packages that are installed in a session will be preserved for use by the project across all sessions
 
-Create run script to start the app: 
+I have created two run scripts to start the apps: 
+
+For Hiplot:
 
 ```python
 
@@ -58,6 +62,8 @@ I save this out as `run-hiplot.py`
 
 The `os.environ["CDSW_APP_PORT]` calls the environment variable `CDSW_APP_PORT` which specifies which port the application must use in order to run successfully.
 
+For Tensorboard:
+
 ```python
 
 # Tensorboard
@@ -71,6 +77,12 @@ subprocess.call(["tensorboard", " --logdir", "logs/fit", "--host", "127.0.0.1",
 I save this out as `run-tensorboard.py`
 
 Notice that adding a flag is as simple as adding the flag and its setting sd part of the comma separated list within the `subprocess.call([ ... ])` command
+
+First we need to make sure that all the required libraries are installed. From the CML/CDSW IDE run:
+
+`!pip3 install  -r requirements.txt`
+
+
 
 # Running applications that require flags
 
